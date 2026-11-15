@@ -1,0 +1,63 @@
+Listing copy — current 0.4.0 build, all features unlocked
+Revise pricing before publishing the future paid build.
+
+NAME
+ChatSweeper
+
+SHORT DESCRIPTION
+Organize ChatGPT chats: count, filter, export, bulk archive, and delete selected conversations with a review before changes.
+
+SUGGESTED CATEGORY
+Productivity / Tools — select the closest option available in the dashboard.
+
+LANGUAGE
+English
+
+DETAILED DESCRIPTION
+Clean up your ChatGPT sidebar with ChatSweeper.
+
+Click the ChatSweeper button to add checkboxes beside your conversations.
+Choose the chats you want to organize, review the list, and archive or delete
+them in a batch.
+
+Features:
+• Count chats in your current workspace, including archived conversations.
+• Search all titles, filter by age, and sort by creation or update date in the organizer.
+• Preview recent messages and restore archived chats.
+• Undo the last archive batch during the current organizer session.
+• Protect pinned chats from selection by default.
+• Load older sidebar conversations with one button.
+• Review selected titles before archiving or permanently deleting chats.
+• Export selected conversations to a JSON file.
+• Optionally export before deletion, with a second confirmation after download.
+• Follow batch progress, stop the queue, and see failures by chat title.
+• Match ChatGPT's appearance or choose light or dark mode.
+
+How to use:
+1. Open ChatGPT and reload the page after installing ChatSweeper.
+2. Open the sidebar and click the extension icon or the ChatSweeper page button.
+3. Wait for chat details to load, select chats, then choose Review archive,
+   Review deletion, or Export selected.
+
+Important details:
+• Requires a signed-in ChatGPT account and the English ChatGPT interface.
+• The compact panel acts on loaded sidebar chats; the organizer covers full history.
+  The total count covers the current workspace, not every workspace combined.
+• Age filters use the last update date, not the chat creation date.
+• Deletion is permanent. Archived chats can be restored in the organizer or ChatGPT settings.
+• JSON exports include conversation message trees. Attachments are referenced,
+  not downloaded. This is not a full-account export or a ChatGPT import file.
+• ChatGPT interface/API changes and rate limits can affect availability.
+
+Privacy:
+ChatSweeper communicates with ChatGPT through your existing signed-in session.
+The current build has no developer-operated collection server or analytics.
+Conversation exports are downloaded to your device when you request them.
+See the linked privacy policy for details about local processing and ChatGPT requests.
+
+ChatSweeper is an independent product and is not affiliated with or endorsed
+by OpenAI. ChatGPT is a trademark of OpenAI.
+
+OWNER-SUPPLIED FIELDS STILL NEEDED
+Publisher identity, support email/URL, public privacy-policy URL, website URL
+if you want one on the listing. Do not paste these placeholders into the dashboard.

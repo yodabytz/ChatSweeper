@@ -1,0 +1,47 @@
+ChatSweeper — Chrome Web Store submission kit
+
+UPLOAD FILE
+submission/ChatSweeper-0.4.0-chrome-store.zip
+
+Upload that ZIP only. Do not upload the outer submission-kit archive,
+the older multi-browser ZIPs, the source folder, or MyMac.
+The upload ZIP contains a Manifest V3 extension with manifest.json at its root.
+
+CURRENT RELEASE STATUS
+Ready to upload as a DRAFT item, not ready for the proposed paid launch.
+This build has all features unlocked. There is no five-action allowance,
+checkout, subscription verification, or Pro feature gating in this build.
+Do not advertise the planned $1.99 subscription as available yet.
+
+CONTENTS
+submission/       Upload ZIP, file inventory, SHA-256 checksum
+assets/           128px icon, three 1280x800 screenshots, 440x280 promo tile
+listing.txt       Listing text that describes the current build accurately
+privacy-draft.html Privacy policy draft requiring publisher/contact details
+privacy-fields.txt Suggested dashboard disclosures and permission rationale
+reviewer-notes.txt Reproducible review instructions and known limitations
+paid-launch.txt   Agreed proposed plan and remaining billing work
+
+UPLOAD STEPS
+1. Sign in at https://chrome.google.com/webstore/devconsole
+2. Register/complete your publisher account if necessary.
+3. Choose Add new item and upload the ZIP named above.
+4. Use listing.txt and assets/ to fill in the listing.
+5. Complete privacy practices using privacy-fields.txt as a starting point.
+6. Supply your real publisher name, support email/URL, and public privacy-policy URL.
+7. Save as draft while the paid-launch work is completed.
+8. Once billing is implemented, upload the final paid build with a higher version,
+   update the listing/privacy policy, test the purchase/cancellation flow,
+   and submit for review. Store approval is Google's decision.
+
+SCREENSHOTS
+The screenshots run the actual extension on an explicitly labelled demo page
+with sample conversations. They contain no customer account information.
+They illustrate current features, not the unimplemented paid plan.
+
+References checked October 25, 2026:
+https://developer.chrome.com/docs/webstore/publish
+https://developer.chrome.com/docs/webstore/cws-dashboard-listing
+https://developer.chrome.com/docs/webstore/images
+https://developer.chrome.com/docs/webstore/cws-dashboard-privacy
+https://developer.chrome.com/docs/webstore/program-policies/user-data-faq

@@ -1,0 +1,13 @@
+{
+  "name": "chatsweeper",
+  "version": "0.4.0",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "test": "node --test tests/*.test.js",
+    "package:store": "npm run build && node scripts/store-assets.js && python3 scripts/package-store.py"
+  },
+  "devDependencies": {
+    "playwright": "1.56.1"
+  }
+}

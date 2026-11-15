@@ -1,0 +1,51 @@
+Draft dashboard guidance for current build 0.4.0
+The publisher must verify the final dashboard answers against the released build.
+
+SINGLE PURPOSE
+Help users organize their ChatGPT conversation history through counting,
+selection, filtering, export, archiving, and deletion.
+
+SITE ACCESS JUSTIFICATION
+Access is restricted to https://chatgpt.com/* and https://chat.openai.com/*.
+The content script adds selection controls to chat-history rows, reads metadata
+to count/filter conversations, obtains the existing session in memory for
+authenticated ChatGPT requests, exports selected conversations on request,
+and archives, restores, or deletes reviewed chats through ChatGPT requests or controls.
+
+OTHER PERMISSIONS
+No tabs, history, cookies, storage, downloads, scripting, or all-URLs permission
+is requested. Tab messaging uses Chrome's API without access to browsing history.
+Downloads use user-triggered browser Blob downloads.
+
+REMOTE CODE
+No remotely hosted executable code. All JavaScript ships in the extension ZIP.
+Requests to ChatGPT retrieve JSON data, not executable code.
+
+USER DATA HANDLING — DISCLOSE EVEN THOUGH PROCESSING IS LOCAL
+Relevant categories to review in the current dashboard:
+• Authentication information: existing ChatGPT session/access token, in memory.
+• Personally identifiable information: workspace/account identifier; session
+  responses may contain user identifiers. ChatSweeper does not use them for advertising.
+• Website content: chat titles, identifiers, dates, pin/archive status and,
+  when previewing, verifying actions, or exporting, conversation message trees.
+• Personal communications: user/assistant conversation contents when previewing, verifying actions, or exporting.
+Conversations may themselves contain other user-supplied sensitive information.
+Use the dashboard's current definitions to make complete, accurate declarations.
+Do not claim that the extension handles no user data merely because no data is
+sent to the developer. Google explicitly requires disclosure of local handling.
+
+DESTINATIONS AND USE
+Only ChatGPT endpoints on the current ChatGPT origin receive authenticated
+requests. Exports go to the user's download destination. No developer backend,
+analytics, advertising, data sales, or unrelated third-party transfers exist
+in this build. Data use is limited to the extension's stated functionality.
+
+PRIVACY POLICY
+Publish privacy-draft.html only after completing publisher/contact details
+and confirming it describes the release. Enter its publicly accessible URL.
+The draft file is not a substitute for the public URL.
+
+FUTURE PAID BUILD
+Revisit disclosures when billing/account/usage tracking is added. The current
+privacy description does not cover Stripe, customer accounts, license servers,
+usage records, or payment-related data retention.

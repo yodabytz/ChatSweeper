@@ -1,0 +1,44 @@
+ChatSweeper 0.4.0 reviewer notes
+
+This upload is a draft of the currently unrestricted extension. No payment or
+license is required in this version. The intended paid product is not implemented.
+
+Test prerequisites:
+Use your own signed-in ChatGPT account, English interface, and disposable chats.
+No test credentials or customer data are supplied in this package.
+
+Test steps:
+1. Install the extension and reload https://chatgpt.com/.
+2. Open chat history and click the extension toolbar button or ChatSweeper page button.
+3. Wait for the count/details. Checkboxes become selectable once pin status is known.
+4. Select a disposable chat and open Review deletion; cancel to verify no change.
+5. Test title search, Last updated filters, and default pinned-chat protection.
+6. Select a disposable chat, choose Review archive, and confirm. Restore it through
+   ChatGPT's archived-chat settings if desired.
+7. Choose Export selected to download JSON locally. Export-before-delete requires
+   another confirmation after the download begins, before any deletion is attempted.
+8. Test light/dark appearance, Load older chats, and Stop after current chat.
+
+Implementation:
+Plain, readable packaged JavaScript; Manifest V3 service worker and content scripts.
+No remote code, analytics, developer backend, or broad permissions.
+The current ChatGPT session is used in memory for same-origin JSON requests.
+Internal ChatGPT conversation endpoints supply count/export data. Native page
+controls perform compact-panel archive/delete actions. The organizer uses
+authenticated requests for preview, archive, restore, and delete. Undocumented interfaces can change.
+
+Scope:
+Compact-panel actions operate on sidebar-loaded chats; organizer actions cover full history. Counts cover the current workspace.
+Exports include message trees and attachment references, not attachment binaries.
+Failures stop the batch. Successfully completed actions are not undone by Stop.
+
+Validation:
+31 automated tests passed, including full-history pagination, archive restoration,
+undo, safe previews, workspace changes, stopping, and existing sidebar safeguards.
+Packaging validates eleven runtime files. Screenshots use labelled demo data.
+
+Organizer checks:
+Open full-history organizer, search titles, sort by creation/update date, and
+switch Active/Archived/All. Click a title to preview recent messages. Archive a
+disposable chat, then Undo last archive; both require review. Use Archived to
+restore older archives. Select all matches covers every result page.

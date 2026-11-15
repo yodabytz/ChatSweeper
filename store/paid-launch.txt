@@ -1,0 +1,33 @@
+Proposed pricing — NOT IMPLEMENTED in this submission ZIP
+
+Free:
+Five successful delete/archive actions combined, lifetime allowance, not per batch.
+Counts, title search, manual selection, pin protection, review screens, progress,
+Stop, and themes remain available. Export-before-delete is available for the trial.
+
+Pro:
+$1.99/month. Proposed optional annual plan: $19.99/year (confirm before setup).
+All features and no ChatSweeper-imposed cleanup quota; ChatGPT limits still apply.
+Advanced age filters, automatic older-history loading and standalone bulk exports
+are proposed Pro features.
+
+Required before paid publication:
+1. Choose the billing provider and establish the publisher's billing account.
+2. Build hosted checkout and a self-service cancellation/subscription portal.
+3. Deploy an authenticated entitlement/usage service with verified billing webhooks.
+4. Implement trial quota, paid entitlements and feature gating in the extension.
+5. Reserve quota before a batch, count only confirmed successful operations,
+   release unused reservations, and handle retries/concurrent tabs consistently.
+6. Test successful payments, failed payments, refunds, cancellation, expiry,
+   offline/license-server failures, reinstall/account recovery, and quota exhaustion.
+7. Describe billing data, retention, processors and contact information in the policy.
+8. Update the store listing/screenshots and supply reviewer access instructions.
+
+Do not store payment-provider secrets in the extension, send ChatGPT tokens to
+the license server, or transmit conversation content for billing. Client-only
+limits are bypassable; server-side entitlements reduce casual abuse but cannot
+make an extension's client-side functionality impossible to modify.
+
+The Chrome Web Store's built-in payment system is retired. Use an external
+payment provider. Do not present this unrestricted 0.3.1 draft as an enforced
+five-chat trial or a functioning subscription product.

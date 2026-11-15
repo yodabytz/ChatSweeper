@@ -1,0 +1,13 @@
+MyMac
+node_modules/
+test-results/
+*.zip
+backups/
+/AGENTS.md
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.DS_Store
+.aws/
