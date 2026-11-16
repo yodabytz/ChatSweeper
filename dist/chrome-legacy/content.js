@@ -437,8 +437,9 @@
     if (!enabled || mutations.every(function (m) { return m.target === host || host.contains(m.target); })) return;
     clearTimeout(timer); timer = setTimeout(scan, 120);
   }).observe(document.body, { childList: true, subtree: true });
-  if (typeof chrome !== 'undefined' && chrome.runtime && chrome.runtime.onMessage) {
-    chrome.runtime.onMessage.addListener(function (message, sender, respond) {
+  var extensionApi = typeof browser !== 'undefined' ? browser : typeof chrome !== 'undefined' ? chrome : null;
+  if (extensionApi && extensionApi.runtime && extensionApi.runtime.onMessage) {
+    extensionApi.runtime.onMessage.addListener(function (message, sender, respond) {
       if (message.type === 'chatsweeper-toggle') { toggle(); respond({ enabled: enabled }); }
     });
   }

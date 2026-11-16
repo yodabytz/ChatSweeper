@@ -1,4 +1,4 @@
-Listing copy — current 0.4.0 build, all features unlocked
+Listing copy — current 0.4.1 build, all features unlocked
 Revise pricing before publishing the future paid build.
 
 NAME

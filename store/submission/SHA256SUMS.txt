@@ -1,1 +1,1 @@
-b3b17098349a15d2bc5e70ded95d19f5a07e4d2eda19a18b5e80e083ccb86580  ChatSweeper-0.4.0-chrome-store.zip
+4c302c12814b878b4328025b461a8764b826af8f2103a022af6b6cb7068a60c6  ChatSweeper-0.4.1-chrome-store.zip

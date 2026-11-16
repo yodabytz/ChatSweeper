@@ -1,4 +1,4 @@
-ChatSweeper 0.4.0 reviewer notes
+ChatSweeper 0.4.1 reviewer notes
 
 This upload is a draft of the currently unrestricted extension. No payment or
 license is required in this version. The intended paid product is not implemented.
@@ -33,7 +33,7 @@ Exports include message trees and attachment references, not attachment binaries
 Failures stop the batch. Successfully completed actions are not undone by Stop.
 
 Validation:
-31 automated tests passed, including full-history pagination, archive restoration,
+34 automated tests passed, including full-history pagination, archive restoration,
 undo, safe previews, workspace changes, stopping, and existing sidebar safeguards.
 Packaging validates eleven runtime files. Screenshots use labelled demo data.
 

@@ -1,13 +1,13 @@
 'use strict';
 const { test, before, after } = require('node:test');
 const assert = require('node:assert/strict');
-const { chromium } = require('playwright');
+const { launch } = require('./browser-helper');
 const fs = require('node:fs');
 let browser;
 before(async () => {
   const downloadsPath = require('node:path').resolve('test-results/downloads');
   fs.mkdirSync(downloadsPath, { recursive: true });
-  browser = await chromium.launch({ headless: true, downloadsPath, executablePath: process.env.CHROME_PATH || '/usr/bin/chromium-browser', args: ['--no-sandbox'] });
+  browser = await launch({ downloadsPath });
 });
 after(async () => { if (browser) await browser.close(); });
 const source = fs.readFileSync('extension/content.js', 'utf8');

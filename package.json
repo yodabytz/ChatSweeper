@@ -1,13 +1,17 @@
 {
   "name": "chatsweeper",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "private": true,
   "scripts": {
     "build": "node scripts/build.js",
     "test": "node --test tests/*.test.js",
-    "package:store": "npm run build && node scripts/store-assets.js && python3 scripts/package-store.py"
+    "package:store": "npm run build && node scripts/store-assets.js && python3 scripts/package-store.py",
+    "test:firefox": "TEST_BROWSER=firefox node --test tests/*.test.js",
+    "lint:firefox": "web-ext lint --source-dir dist/firefox --warnings-as-errors",
+    "package:firefox": "npm run build && npm run lint:firefox && python3 scripts/package-firefox.py"
   },
   "devDependencies": {
-    "playwright": "1.56.1"
+    "playwright": "1.56.1",
+    "web-ext": "^10.8.0"
   }
 }

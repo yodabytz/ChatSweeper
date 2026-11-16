@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "ChatSweeper",
+  "version": "0.4.1",
+  "description": "Organize ChatGPT chats: count, filter, export, bulk archive, and delete selected conversations with a review before changes.",
+  "action": {
+    "default_title": "Toggle ChatSweeper",
+    "default_icon": {
+      "16": "icons/16.png",
+      "32": "icons/32.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*"
+      ],
+      "js": [
+        "counts.js",
+        "export.js",
+        "history-api.js",
+        "organizer.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "chatsweeper@yodabytz.github.io",
+      "strict_min_version": "142.0",
+      "data_collection_permissions": {
+        "required": [
+          "authenticationInfo",
+          "personallyIdentifyingInfo",
+          "websiteActivity"
+        ]
+      }
+    }
+  }
+}

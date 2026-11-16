@@ -1,4 +1,4 @@
-Draft dashboard guidance for current build 0.4.0
+Draft dashboard guidance for current build 0.4.1
 The publisher must verify the final dashboard answers against the released build.
 
 SINGLE PURPOSE

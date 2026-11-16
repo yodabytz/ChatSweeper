@@ -1,7 +1,7 @@
 ChatSweeper — Chrome Web Store submission kit
 
 UPLOAD FILE
-submission/ChatSweeper-0.4.0-chrome-store.zip
+submission/ChatSweeper-0.4.1-chrome-store.zip
 
 Upload that ZIP only. Do not upload the outer submission-kit archive,
 the older multi-browser ZIPs, the source folder, or MyMac.

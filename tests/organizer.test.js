@@ -1,10 +1,10 @@
 const { test, before, after } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
-const { chromium } = require('playwright');
+const { launch } = require('./browser-helper');
 let browser;
-before(async () => { browser = await chromium.launch({ executablePath: process.env.CHROME_PATH || '/usr/bin/chromium-browser', headless: true, args: ['--no-sandbox'] }); });
-after(async () => { await browser.close(); });
+before(async () => { browser = await launch(); });
+after(async () => { if (browser) await browser.close(); });
 async function setup(options = {}) {
   const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
   const records = Array.from({ length: 65 }, (_, i) => ({ id: 'chat-' + i, title: 'Conversation ' + String(i).padStart(2, '0'), update_time: 1700000000 + i, create_time: 1600000000 + i, is_archived: i >= 60, is_starred: i === 1 }));

@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "ChatSweeper",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "Organize ChatGPT chats: count, filter, export, bulk archive, and delete selected conversations with a review before changes.",
   "minimum_chrome_version": "61",
   "icons": {

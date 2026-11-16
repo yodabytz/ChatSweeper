@@ -1,6 +1,6 @@
 # ChatSweeper
 
-Version **0.4.0** — includes the full-history organizer, archive restoration and undo, and conversation previews.
+Version **0.4.1** — includes the full-history organizer, archive restoration and undo, and conversation previews.
 
 Find, select, export, archive, and delete ChatGPT conversations. No external servers, analytics, or dependencies are used at runtime. Counting, previews, organizer actions, and exporting use your existing ChatGPT session token in memory only; it is never saved or sent outside ChatGPT.
 
@@ -18,7 +18,7 @@ Find, select, export, archive, and delete ChatGPT conversations. No external ser
 
 In the compact panel, search, age filters, and bulk actions apply to loaded sidebar chats. The total count covers the whole current workspace, including archived chats. Those scopes are deliberately shown separately.
 
-## Full-history organizer (0.4.0)
+## Full-history organizer (0.4.1)
 
 Click **Open full-history organizer** to search all titles in the current workspace, filter active/archived chats and age, and sort by title, creation date, or last update. **Select all matches** spans every result page. Changing filters or sort clears selection.
 
@@ -50,11 +50,18 @@ Keep the tab open during deletion. **Stop after current chat** stops the remaini
 
 ## Browser builds
 
+- `dist/firefox`: Manifest V3 with a Firefox background event page; targets desktop Firefox 142 and newer. See [Firefox setup and testing](firefox/README.md).
 - `dist/chrome`: Manifest V3, targets Chrome 88 and newer. This is the build for the Mac's Chrome 150.
 - `dist/chrome-legacy`: Manifest V2, targets Chrome 61–87 and Chromium browsers that still support Manifest V2. Browser compatibility targets are not a promise that today's ChatGPT will run on an old browser.
 - `dist/min/chatsweeper.user.js`: Min userscript. In Min Preferences, enable **User Scripts**, click **Show script directory**, and copy the script there. Reload ChatGPT and use the on-page ChatSweeper button. On macOS the default script directory is `~/Library/Application Support/Min/userscripts`.
 
 Do not install multiple variants in the same browser. Chrome's current versions require the Manifest V3 build. Min uses its own userscript support instead of Chrome's extension installation flow.
+
+## Install temporarily in Firefox
+
+Open `about:debugging#/runtime/this-firefox`, click **Load Temporary Add-on…**, and choose `dist/firefox/manifest.json`. Refresh ChatGPT and allow site access if Firefox requests it. Use the ChatSweeper toolbar icon or on-page button. Temporary add-ons last until Firefox restarts; a permanent release requires Mozilla signing.
+
+Run `npm run package:firefox` to build, validate with Mozilla's `web-ext`, and create the unsigned testing ZIP under `firefox/submission/`. Run `npx playwright install firefox` once, then `npm run test:firefox` for the Firefox test suite. Both Firefox and Chromium passed all 34 automated tests for this port. The Firefox package validator reports zero errors, notices, or warnings.
 
 ## Scope and safeguards
 
@@ -84,13 +91,13 @@ Source: `extension/`. Generated, ready-to-load builds: `dist/`. Run the build af
 
 Run `npm run package:store` to build the extension, capture store-sized images on a labelled sample-data page, smoke-test the actual packaged extension, and create a strict-allowlist upload ZIP. It requires Chromium and Python 3 in addition to the development dependencies above.
 
-The upload file is `store/submission/ChatSweeper-0.4.0-chrome-store.zip`. Its manifest is at the ZIP root. The older multi-browser ZIPs are installation bundles, not Chrome Web Store upload packages. `store/START-HERE.txt` explains the submission kit, listing copy, privacy draft, and reviewer notes.
+The upload file is `store/submission/ChatSweeper-0.4.1-chrome-store.zip`. Its manifest is at the ZIP root. The older multi-browser ZIPs are installation bundles, not Chrome Web Store upload packages. `store/START-HERE.txt` explains the submission kit, listing copy, privacy draft, and reviewer notes.
 
 This package is ready for a **draft upload**, not the proposed paid launch. The current build is unrestricted: the five-action allowance, $1.99/month checkout, licensing backend, and Pro gating are not implemented. A public privacy-policy URL and publisher support details are also still needed. Do not advertise the planned subscription until the paid build and disclosures are complete.
 
 Credentials, local connection files, backups, dependencies, test artifacts, and generated ZIP archives are excluded from version control. Run the packaging command to generate upload ZIPs locally.
 
-The 0.4.0 release passed 31 automated tests, including full-history pagination, restoration, undo, previews, workspace changes, and stopping batches.
+The 0.4.1 release passed 34 automated tests, including full-history pagination, restoration, undo, previews, workspace changes, and stopping batches.
 
 ChatSweeper is an independent product, not affiliated with or endorsed by OpenAI. ChatGPT is a trademark of OpenAI.
 
